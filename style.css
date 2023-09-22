@@ -1,0 +1,118 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* Remove Default Design */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #212121;
+    font-family: 'VT323', monospace;
+    font-size: 1.5rem;
+}
+a{
+    text-decoration:none;
+}
+/* variable */
+:root{
+    --leftText: #808285;
+    --yFont: #E6DB74;
+    --wFont:#FFFFFF;
+    --pFont:#9A99FF;
+    --sFont:#2fcbef;
+    --border:1px solid rgba(174, 167, 167, 0.2);
+}
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-bottom: var(--border);
+}
+/* left fixed text */
+.left-fixed{
+    width: 4%;
+    height: 10;
+    margin-top: 6px;
+}
+.left-fixed div{
+    width: 100%;
+    padding-top: 4px;
+    text-align: center;
+    font-size: 21px;
+    color: var(--leftText);
+}
+/* main content */
+.container{
+    width: 94%;
+    height: 100%;
+    border-left: var(--border);
+}
+/* navigation  */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.home-name{
+    margin: 20px;
+    color: var(--wFont);
+}
+.home-name span{
+    margin: 30px;
+    color: var(--pFont);
+}
+nav li{
+    display: inline;
+    list-style: none;
+    padding: 10px 40px;
+}
+nav a{
+    color: var(--yFont);
+}
+nav a:hover{
+    color: var(--pFont);
+}
+.home{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.name-info{
+    color: var(--wFont);
+    font-size: 1.8rem;
+}
+.des-info{
+    color: var(--wFont);
+    font-size: 4rem;  
+    position: relative;
+}
+.des-info span{
+    color: var(--yFont);
+}
+.des-info span::before{
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 8px;
+    background-color: var(--yFont);
+    top: 20%;
+    right: 60px;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 0;
+    }
+}
+/* footer */
+footer{
+    width: 100%;
+    height: 80px;
+}
+/* media  */
