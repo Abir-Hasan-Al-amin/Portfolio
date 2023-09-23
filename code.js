@@ -60,3 +60,53 @@ var projectInfo=[
     </section>`
     });
     projectContainer.innerHTML = pro;
+
+// contact email
+const submitForm=document.getElementById("f-button");
+const nameF=document.getElementById("name");
+const emailF=document.getElementById("email");
+const subF=document.getElementById("sub");
+const textF=document.getElementById("text");
+const errorF=document.querySelectorAll("#error");
+let nameV= /^([a-zA-Z])/;
+const form = document.getElementById("myForm");
+form.addEventListener("submit",e=> {
+    let a=0;
+    e.preventDefault();
+    if(!nameV.test(nameF.value)){
+        errorF[0].textContent="Please use alphabet as first char";
+        a++;
+    }else{
+        errorF[0].textContent="";
+    }
+    if(!nameV.test(subF.value)){
+        errorF[1].textContent="Please use alphabet as first char";
+        a++;
+    }else{
+        errorF[1].textContent="";
+    }
+    if(textF.value.trim()==""){
+        errorF[2].textContent="Please write something";
+        a++;
+    }else{
+        errorF[2].textContent="";
+    }
+    if(a===0){
+        const body= `Name: ${nameF.value}.<br/> Email: ${emailF.value}.<br/> Message: ${textF.value}`;
+        Email.send({
+            SecureToken : "fbd23097-2004-4d16-ac5d-b2459f4a1bf2",
+            To : 'darkshadowbd1999@gmail.com',
+            From : "darkshadowbd1999@gmail.com",
+            Subject : subF.value,
+            Body : body
+        }).then(
+            message => {
+                if(message=='OK'){
+                    swal("Successful", "Email Sent", "success");
+                }else{
+                    swal("Something Went Wrong", "Email Not Sent", "error");
+                }
+            }
+        );
+    }
+});

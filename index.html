@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Abir Hasan Al-amin</title>
 </head>
@@ -16,19 +17,20 @@
                 <section class="home-name"> // Al-amin<br><span>web_dev</span></section>
                 <section class="home-feature">
                     <ul>
-                        <li><a href="#">_home</a></li>
-                        <li><a href="#">_about</a></li>
-                        <li><a href="#">_projects</a></li>
-                        <li><a href="#">_skills</a></li>
-                        <li><a href="#">_contact</a></li>
+                        <li><a href="#home">_home</a></li>
+                        <li><a href="#about">_about</a></li>
+                        <li><a href="#projects">_projects</a></li>
+                        <li><a href="#skills">_skills</a></li>
+                        <li><a href="#resume">_resume</a></li>
+                        <li><a href="#contact">_contact</a></li>
                     </ul>
                 </section>
             </nav>
-            <section class="home">
+            <section class="home" id="home">
                 <section class="name-info">// Hi , I'M Abir Hasan Al-amin, A... </section>
                 <section class="des-info">{" <span></span> "}</section>
             </section>
-            <section class="about">
+            <section class="about" id="about">
                 <section class="profile-img"></section>
                 <section class="section-info">
                     <section class="section-logo">{/}</section>
@@ -40,7 +42,7 @@
                     <section class="about-right">I am a highly dedicated and motivated Computer Science and Engineering student at Daffodil International University, deeply passionate about programming and technology. Proficient in C, C++, and JavaScript, I excel in web development using HTML, CSS, and React, and I have experience in Android app development and database management with MySQL and Firebase. I've honed my problem-solving skills by tackling over 300+ questions in Data Structures and Algorithms on prominent coding platforms.</section>
                 </section>
             </section>
-            <section class="projects">
+            <section class="projects" id="projects">
                 <section class="section-info">
                     <section class="section-logo">(!)</section>
                     <section class="section-title">&lt;projects&gt;</section>
@@ -49,18 +51,79 @@
                 <section class="projects-info">
 
                 </section>
+                <section class="p-more">
+                    <button>{ see_more }</button>
+                </section>
             </section>
-            <section class="skills">
-
+            <section class="skills" id="skills">
+                <section class="section-info">
+                    <section class="section-logo">(🛠)</section>
+                    <section class="section-title">&lt;skills&gt;</section>
+                    <section class="section-des">...🤪😵🥴😵🤪🐱‍🏍</section>
+                </section>
+                <section class="s-info">
+                    <ul>
+                        <li><img width="96" height="96" src="https://img.icons8.com/fluency/96/c-programming.png" alt="c-programming"/></li>
+                        <li><img width="96" height="96" src="https://img.icons8.com/fluency/96/c-plus-plus-logo.png" alt="c-plus-plus-logo"/></li>
+                        <li><img width="100" height="100" src="https://img.icons8.com/plasticine/100/html-5.png" alt="html-5"/></li>
+                        <li><img width="100" height="100" src="https://img.icons8.com/plasticine/200/css3.png" alt="css3"/></li>
+                        <li><img width="75" height="75" src="https://img.icons8.com/dusk/64/javascript-logo.png" alt="javascript-logo"/></li>
+                        <li><img width="100" height="100" src="https://img.icons8.com/clouds/100/react.png" alt="react"/></li>
+                        <li><img width="100" height="100" src="https://img.icons8.com/plasticine/100/tailwind_css.png" alt="tailwind_css"/></li>
+                        <li><img width="96" height="96" src="https://img.icons8.com/fluency/96/mysql-logo.png" alt="mysql-logo"/></li>
+                        <li><img width="96" height="96" src="https://img.icons8.com/color/96/git.png" alt="git"/></li>
+                    </ul>
+                </section>
             </section>
-            <section class="contact">
-
+            <section class="resume" id="resume">
+                <section class="section-info">
+                    <section class="section-logo">(*)</section>
+                    <section class="section-title">&lt;resume&gt;</section>
+                    <section class="section-des">...📄</section>
+                </section>
+                <section class="r-info">
+                    <button><a href="" download="">Download</a></button>
+                </section>
+            </section>
+            <section class="contact" id="contact">
+                <section class="section-info">
+                    <section class="section-logo">(*)</section>
+                    <section class="section-title">&lt;contact_me&gt;</section>
+                    <section class="section-des">...📧 me</section>
+                </section>
+                <section class="c-info">
+                    <form id="myForm">
+                        <section class="form-group">
+                            <input id="name" type="text" name="name" placeholder="_name*" required>
+                            <span id="error"></span>
+                        </section>
+                        <input id="email" type="email" name="email" placeholder="_email*" required>
+                        <section class="form-group">
+                            <input id="sub" type="text" name="sub" placeholder="_subject*" required>
+                            <span id="error"></span>
+                        </section>
+                        <section class="form-group">
+                            <textarea id="text" name="msg" rows="10" placeholder="_message*"></textarea>
+                            <span id="error"></span>
+                        </section>
+                        <button type="submit">{send}</button>
+                    </form>
+                </section>
+                <section class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/AbirHasanAlaminBD/" target="_blank"><i class="fa-brands fa-square-facebook" ></i></a></li>
+                        <li><a href="https://github.com/Abir-Hasan-Al-amin" target="_blank"><i class="fa-brands fa-square-github"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/abirhasanal-amin/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </section>
             </section>
         </section>
     </main>
     <footer class="footer">
-
+        <p>Copyright © 2023 Abir Hasan Al-amin</p>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="code.js"></script>
 </body>
 </html>
