@@ -15,23 +15,23 @@
         <section class="container">
             <nav class="nav-bar">
                 <section class="home-name"> // Al-amin<br><span>web_dev</span></section>
-                <section class="home-feature">
+                <section class="home-feature" id="home-f">
                     <ul>
-                        <li><a href="#home">_home</a></li>
-                        <li><a href="#about">_about</a></li>
-                        <li><a href="#projects">_projects</a></li>
-                        <li><a href="#skills">_skills</a></li>
-                        <li><a href="#resume">_resume</a></li>
-                        <li><a href="#contact">_contact</a></li>
+                        <li id="nav-c"><a href="#home">_home</a></li>
+                        <li id="nav-c"><a href="#about">_about</a></li>
+                        <li id="nav-c"><a href="#projects">_projects</a></li>
+                        <li id="nav-c"><a href="#skills">_skills</a></li>
+                        <li id="nav-c"><a href="#resume">_resume</a></li>
+                        <li id="nav-c"><a href="#contact">_contact</a></li>
                     </ul>
                 </section>
+                <a href="" class="nav-toggle" id="menu"><i class="fa-solid fa-bars"></i></a>
             </nav>
             <section class="home" id="home">
                 <section class="name-info">// Hi , I'M Abir Hasan Al-amin, A... </section>
                 <section class="des-info">{" <span></span> "}</section>
             </section>
             <section class="about" id="about">
-                <section class="profile-img"></section>
                 <section class="section-info">
                     <section class="section-logo">{/}</section>
                     <section class="section-title">&lt;about me&gt;</section>
@@ -46,11 +46,11 @@
                 <section class="section-info">
                     <section class="section-logo">(!)</section>
                     <section class="section-title">&lt;projects&gt;</section>
-                    <section class="section-des">...click image for live demo and click name for github link</section>
+                    <section class="section-des">...please click 'See More' to explore the comprehensive GitHub profile for additional information and insights</section>
                 </section>
-                <section class="projects-info">
+                    <section class="projects-info">
 
-                </section>
+                    </section>
                 <section class="p-more">
                     <button>{ see_more }</button>
                 </section>
@@ -82,7 +82,7 @@
                     <section class="section-des">...📄</section>
                 </section>
                 <section class="r-info">
-                    <button><a href="" download="">Download</a></button>
+                    <button><a href="" download="">{download}</a></button>
                 </section>
             </section>
             <section class="contact" id="contact">
@@ -103,7 +103,7 @@
                             <span id="error"></span>
                         </section>
                         <section class="form-group">
-                            <textarea id="text" name="msg" rows="10" placeholder="_message*"></textarea>
+                            <textarea id="text" name="msg" rows="5" placeholder="_message*"></textarea>
                             <span id="error"></span>
                         </section>
                         <button type="submit">{send}</button>

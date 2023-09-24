@@ -23,24 +23,25 @@ const typeEffect = () =>{
 typeEffect();
 
 // fixed left
+document.addEventListener("DOMContentLoaded", function() {
+let heightS=document.querySelector(".container");
 const container = document.querySelector(".left-fixed");
 const existingDiv = document.querySelector(".left-fixed div");
-const targetHeight = container.clientHeight;
-const divHeight = existingDiv.clientHeight;
-const maxNumber = Math.ceil((targetHeight + 4000)  / divHeight);
-
+const computedStyle = getComputedStyle(existingDiv);
+const divHeight = parseFloat(computedStyle.height);
+const maxNumber = Math.ceil( heightS.offsetHeight  / divHeight);
 for (let i = 2; i < maxNumber; i++) {
     const divClone = existingDiv.cloneNode(true); 
     divClone.textContent = i;
     container.appendChild(divClone);
 }
-
+});
 // projects
 var projectInfo=[
-{git:"https://github.com/Abir-Hasan-Al-amin/Usabilityhub.com---Clone",live:"https://abir-hasan-al-amin.github.io/Usabilityhub.com---Clone/",title:"Usabilityhub.com",des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/us-clone.png"},
+{git:"https://github.com/Abir-Hasan-Al-amin/Usabilityhub.com---Clone",live:"https://abir-hasan-al-amin.github.io/Usabilityhub.com---Clone/",title:"Usabilityhub.com",des:"Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/us-clone.png"},
 {git:"https://github.com/Abir-Hasan-Al-amin/Youtube-Landing_Page-Clone",live:"https://abir-hasan-al-amin.github.io/Youtube-Landing_Page-Clone/",title:"Youtube Landing Page", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/you-clone.png"},
-{git:"https://github.com/Abir-Hasan-Al-amin/JavaScript-Form-Validation",live:"https://abir-hasan-al-amin.github.io/JavaScript-Form-Validation/",title:"JavaScript Form Validation", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/Form.png"},
-{git:"https://github.com/Abir-Hasan-Al-amin/Mini-Project---Bangladesh-Gallery-using-CSS-Grid--",live:"https://abir-hasan-al-amin.github.io/Mini-Project---Bangladesh-Gallery-using-CSS-Grid--/",title:"Bangladesh-Gallery", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/bd.png"},
+{git:"https://github.com/Abir-Hasan-Al-amin/JavaScript-Form-Validation",live:"https://abir-hasan-al-amin.github.io/JavaScript-Form-Validation/",title:"Form Validation", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/Form.png"},
+{git:"https://github.com/Abir-Hasan-Al-amin/Mini-Project---Bangladesh-Gallery-using-CSS-Grid--",live:"https://abir-hasan-al-amin.github.io/Mini-Project---Bangladesh-Gallery-using-CSS-Grid--/",title:"Bangladesh-Gallery", des:"Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/bd.png"},
 {git:"https://github.com/Abir-Hasan-Al-amin/Tic-tac-toe",live:"https://abir-hasan-al-amin.github.io/Tic-tac-toe/",title:"Tic-tac-toe", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/tic.png"},
 {git:"https://github.com/Abir-Hasan-Al-amin/News-Website",live:"#",title:"News Website", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/0.png"},
 {git:"https://github.com/Abir-Hasan-Al-amin/Basic-Calculator--Html---Css---JS-",live:"https://abir-hasan-al-amin.github.io/Basic-Calculator--Html---Css---JS-/",title:"Calculator", des:"Lorem ipsum dolor sit amet consectetur adipisicing elit",img:"/img/calculator.png"},
@@ -51,13 +52,23 @@ var projectInfo=[
     let pro="";
     const projectContainer= document.querySelector('.projects-info');
     projectInfo.forEach(p => {
-        pro+=`<section class="p-info">
+        pro+=`<section class="p-main">
+        <section class="p-info">
         <section class="p-img">
-            <a href="${p.live}"><img src="${p.img}" alt="image"></a>
+            <img src="${p.img}" alt="image">
         </section>
-        <section class="p-title"><a href="${p.git}">{ ${p.title} }</a></section>
-        <section class="p-des">${p.des}</section>
-    </section>`
+        <section class="p-content">
+            <section class="p-title">{ ${p.title} }</section>
+            <section class="p-bottom">
+                <section class="p-des">${p.des}</section>
+                <section class="p-button">
+                    <button class="p-live"><a href="${p.git}">_Live Demo</a></button>
+                    <button class="p-git"> <a href="${p.live}">_GitHub</a></button>
+                </section>
+            </section>
+        </section>
+    </section>
+        </section>`
     });
     projectContainer.innerHTML = pro;
 
@@ -106,7 +117,44 @@ form.addEventListener("submit",e=> {
                 }else{
                     swal("Something Went Wrong", "Email Not Sent", "error");
                 }
+                nameF.value=""
+                subF.value="";
+                emailF.value="";
+                textF.value="";
             }
         );
     }
 });
+// slide menu
+const homeF=document.getElementById("home-f");
+const menu=document.getElementById("menu");
+const navC=document.querySelectorAll("#nav-c");
+menu.addEventListener('click',(e)=>{
+    e.preventDefault();
+    homeF.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+navC.forEach((nav)=>{
+    nav.addEventListener("click",()=>{
+        homeF.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+});
+
+// smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth' 
+            });
+        }
+    });
+});
+

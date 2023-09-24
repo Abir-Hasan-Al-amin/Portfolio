@@ -48,7 +48,7 @@ main{
 /* left fixed text */
 .left-fixed{
     width: 4%;
-    height: 10;
+    height: 10px;
     margin-top: 6px;
 }
 .left-fixed div{
@@ -70,6 +70,13 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    border-bottom: var(--border);
+}
+.nav-bar{
+    position: relative;
+}
+.nav-toggle{
+    display:none;
 }
 .home-name{
     margin: 20px;
@@ -90,6 +97,7 @@ nav a{
 nav a:hover{
     color: var(--pFont);
 }
+/* home */
 .home{
     margin-top: 80px;
     display: flex;
@@ -138,11 +146,9 @@ nav a:hover{
     color: var(--wFont);
 }
 .section-des{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--yFont);
     width: 800px;
+    text-align: center;
 }
 .section-info{
     display: flex;
@@ -173,30 +179,84 @@ nav a:hover{
 .projects-info{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-.p-info{
+.p-main{
+    width: 50%;
+    height: 700px;
+    border: var(--border);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 50px;
-    width: 50%;
-    height: 800px;
-    border-block: var(--border);
-    border-left:var(--border);;
 }
-.p-title a{
+.p-info{
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 80%;
+    box-shadow:  0px 1px 2px 0px rgba(255,255,255,.15);
+    transition: 0.2s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.p-info:hover{
+    box-shadow:  0px 1px 30px 0px rgba(255, 255, 255, 0.3);
+}
+.p-info .p-img{
+    height: 600px;
+    overflow: hidden;
+}
+.p-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+    transition: 0.3s ease-in-out;
+}
+.p-info:hover .p-img img{
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+.p-info .p-content{
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    text-align: center;
+    padding: 20px 30px;
+    transition: 0.3s ease-in-out;
+    background-color: #212121;
+}
+.p-info:hover .p-content{
+    bottom: 0;
+}
+.p-live{
+    background-color: rgb(176, 176, 176);
+    border-radius: 5px;
+}
+.p-live a{
+    color: var(--wFont);
+}
+.p-git{
+    background-color: rgb(217, 116, 100);
+    border-radius: 5px;
+}
+.p-git a{
+    color: var(--wFont);
+}
+.p-button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+}
+
+.p-title{
     color: var(--wFont);
     font-size: 4rem;
+    margin-bottom: 10px;
 }
 .p-des{
     color: var(--yFont);
-}
-.p-img img{
-    width: 700px;
-    height: 500px;
-    object-fit: cover;
-    object-position: center;
 }
 .p-more a{
     color: var(--wFont);
@@ -207,7 +267,7 @@ nav a:hover{
     align-items: center;
     margin: var(--sectionMargin);
     margin-bottom: 0px;
-}
+} 
 
 /* skills */
 .skills{
@@ -276,7 +336,6 @@ form button{
 .social li{
     display: inline;
     list-style: none;
-    padding: 10px 40px;
 }
 .social i{
     font-size: 50px;
@@ -304,4 +363,262 @@ footer{
     justify-content: center;
     align-items: center;
 }
-/* media  	640px  768px  1024px  1280px  1536px */
+/* media  */
+@media screen and (max-width: 1540px){
+    :root{
+        --contentMargin: 150px;
+        --sectionMargin:80px;
+    }
+    .section-title{
+        font-size: 6.5rem;
+    }
+    .des-info{
+        font-size: 6.5rem;
+    }
+    .des-info span::before{
+        top: 20%;
+        right: 110px;
+    }
+    .p-title{
+        font-size: 2.3rem;
+    }
+    .p-des{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 1280px){
+    :root{
+        --contentMargin: 100px;
+        --sectionMargin: 70px;
+    } 
+    body{
+        font-size: 1.4rem;
+    }
+    .nav-toggle{
+        display: block;
+        margin-right: 20px;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-feature{
+        position: absolute;
+        z-index: 100;
+        background-color: #212121;
+        right: -100%;
+        top: 100%;
+        width: 70%;
+        height: 100vh;
+        padding-block: 80px;
+        border: var(--border);
+        box-shadow:-2px -2px 2px rgba(174, 167, 167, 0.2);
+        font-size: 1.5rem;
+        transition: 0.8s ease-out;
+    }
+    .home-feature.active{
+        right: 0;
+    }
+    .nav-toggle.active{
+        color: var(--pFont);
+    }
+    .section-title{
+        font-size: 5.5rem;
+    }
+    .des-info{
+        font-size: 5.5rem;
+    }
+    .des-info span::before{
+        top: 20%;
+        right: 80px;
+        height: 70px;
+    }
+    .p-main{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1024px){
+    :root{
+        --contentMargin: 100px;
+        --sectionMargin:50px;
+    } 
+    body{
+        font-size: 1.2rem;
+    }
+    .about-left{
+        display: none;
+    }
+    .about-right{
+        width: 100%;
+    }
+    .section-title{
+        font-size: 5rem;
+    }
+    .des-info{
+        font-size: 5rem;
+    }
+    .des-info span::before{
+        top: 20%;
+        height: 60px;
+        right: 70px;
+    }
+    button {
+        padding: 16px;
+        font-size: 1.2rem;
+    }
+    .s-info img{
+        width: 50px;
+        height: 50px;
+    }
+    .social ul{
+        margin-top: 30px;
+        padding: 0px 200px;
+    }
+}
+@media screen and (max-width: 924px){
+    :root{
+        --contentMargin: 80px;
+        --sectionMargin: 50px;
+    } 
+    body{
+        font-size: 1.2rem;
+    }
+    .section-des{
+        width: 450px;
+        text-align: center;
+    }
+    .name-info{
+        font-size: 1.4rem;
+    }
+    .about-left{
+        display: none;
+    }
+    .about-right{
+        width: 100%;
+        padding: 20px;
+    }
+    .section-title{
+        font-size: 3rem;
+    }
+    .des-info{
+        font-size: 3rem;
+    }
+    .des-info span::before{
+        top: 20%;
+        height: 40px;
+        width: 8px;
+        right: 45px;
+    }
+    .social ul{
+        margin-top: 25px;
+        padding: 0px 100px;
+    }
+    .p-main{
+        height: 600px;
+    }
+    .p-info{
+        width: 90%;
+        height: 90%;
+    }
+    .p-title{
+        font-size: 1.7rem;
+    }
+    .p-des{
+        font-size: 1.2rem;
+    }
+    .p-live,.p-git{
+        width: 140px;
+        padding: 12px;
+    }
+}
+@media screen and (max-width: 624px){
+    :root{
+        --contentMargin: 80px 30px;
+        --sectionMargin: 35px;
+    } 
+    body{
+        font-size: 1rem;
+    }
+    .left-fixed{
+        width: 8%;
+        height: 10;
+        margin-top: 2px;
+    }
+    .left-fixed div{
+        padding-top: 2px;
+        font-size: 12px;
+    }
+    .home-name{
+        margin: 20px;
+    }
+    .home-name span{
+        margin: 22px;
+    }
+    .section-des{
+        width: 320px;
+    }
+    .name-info{
+        font-size: 1.2rem;
+    }
+    .about-right{
+        padding: 15px;
+    }
+    .section-title{
+        font-size: 1.8rem;
+    }
+    .section-logo{
+        font-size: 2rem;
+    }
+    .p-main{
+        height: 400px;
+    }
+    .p-info{
+        width: 95%;
+        height: 90%;
+    }
+    .p-title{
+        font-size: 1.5rem;
+    }
+    .p-des{
+        font-size: 1rem;
+    }
+    .p-live,.p-git{
+        width: 100px;
+        padding: 10px;
+    }
+    .des-info{
+        font-size: 1.8rem;
+    }
+    .des-info span::before{
+        top: 15%;
+        height: 25px;
+        width: 5px;
+        right: 27px;
+    }
+    button {
+        padding: 12px;
+        font-size: .9rem;
+        width: 110px;
+    }
+    .s-info img{
+        width: 30px;
+        height: 30px;
+    }
+    .social ul{
+        margin-top: 10px;
+        padding: 0px 50px;
+    }
+    .social i{
+        font-size: 30px;
+    }
+    form input, form textarea{
+        font-size: 1rem;
+        padding: 10px;
+        margin-block: 15px;
+    }
+    footer{
+        height: 40px;
+    }
+}
