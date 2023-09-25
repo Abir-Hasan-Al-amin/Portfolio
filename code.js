@@ -62,8 +62,8 @@ var projectInfo=[
             <section class="p-bottom">
                 <section class="p-des">${p.des}</section>
                 <section class="p-button">
-                    <button class="p-live"><a href="${p.git}">_Live Demo</a></button>
-                    <button class="p-git"> <a href="${p.live}">_GitHub</a></button>
+                    <a href="${p.live}" target="_blank"><button class="p-live">_Live Demo</button></a>
+                    <a href="${p.git}" target="_blank"><button class="p-git"> _GitHub</button></a>
                 </section>
             </section>
         </section>
