@@ -6,10 +6,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    overflow-x:hidden;
+}
 body{
     width: 100vw;
     height: 100vh;
-    background-color: #212121;
+    background-color: #262A33;
     font-family: 'VT323', monospace;
     font-size: 1.5rem;
     overflow-x: hidden;
@@ -71,6 +74,7 @@ nav{
     align-items: center;
     height: 100px;
     border-bottom: var(--border);
+    background-color: #23262E;
 }
 .nav-bar{
     position: relative;
@@ -79,11 +83,16 @@ nav{
     display:none;
 }
 .home-name{
-    margin: 20px;
+    background-color: #262A33;
+    height:100%;
     color: var(--wFont);
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    padding:30px;
 }
 .home-name span{
-    margin: 30px;
+    margin-left: 30px;
     color: var(--pFont);
 }
 nav li{
@@ -407,7 +416,7 @@ footer{
     .home-feature{
         position: absolute;
         z-index: 100;
-        background-color: #212121;
+        background-color: #24272f;
         right: -100%;
         top: 100%;
         width: 70%;
@@ -418,7 +427,7 @@ footer{
         font-size: 1.5rem;
         transition: 0.8s ease-out;
     }
-    .home-feature.active{
+    .home-feature.active {
         right: 0;
     }
     .nav-toggle.active{
@@ -549,12 +558,6 @@ footer{
     .left-fixed div{
         padding-top: 2px;
         font-size: 12px;
-    }
-    .home-name{
-        margin: 20px;
-    }
-    .home-name span{
-        margin: 22px;
     }
     .section-des{
         width: 320px;
