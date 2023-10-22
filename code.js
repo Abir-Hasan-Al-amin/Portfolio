@@ -23,19 +23,27 @@ const typeEffect = () =>{
 typeEffect();
 
 // fixed left
-document.addEventListener("DOMContentLoaded", function() {
-let heightS=document.querySelector(".container");
-const container = document.querySelector(".left-fixed");
-const existingDiv = document.querySelector(".left-fixed div");
-const computedStyle = getComputedStyle(existingDiv);
-const divHeight = parseFloat(computedStyle.height);
-const maxNumber = Math.ceil( heightS.offsetHeight  / divHeight);
-for (let i = 2; i < maxNumber; i++) {
-    const divClone = existingDiv.cloneNode(true); 
-    divClone.textContent = i;
-    container.appendChild(divClone);
+function updateLeftFixedDivs() {
+    const heightS = document.querySelector(".container");
+    const container = document.querySelector(".left-fixed");
+    const existingDiv = document.querySelector(".left-fixed div");
+    const computedStyle = getComputedStyle(existingDiv);
+    const divHeight = parseFloat(computedStyle.height);
+    const maxNumber = Math.ceil(heightS.offsetHeight / divHeight);
+
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    for (let i = 1; i < maxNumber; i++) {
+        const divClone = existingDiv.cloneNode(true);
+        divClone.textContent = i;
+        container.appendChild(divClone);
+    }
 }
-});
+
+document.addEventListener("DOMContentLoaded", updateLeftFixedDivs);
+window.addEventListener("resize", updateLeftFixedDivs);
+
 // projects
 var projectInfo=[
 {git:"https://github.com/Abir-Hasan-Al-amin/ToDo_App_FireBase",live:"https://abirtodoapp.netlify.app/",title:"TodoApp with FireBase",des:"This Todo App is a cutting-edge task management solution that leverages Firebase's robust real-time database and authentication services. This integration ensures seamless real-time collaboration, secure user authentication, and optimal user experiences across diverse devices with its responsive design.",img:"img/todo.png"},
@@ -62,7 +70,7 @@ var projectInfo=[
         <section class="p-content">
             <section class="p-title">{ ${p.title} }</section>
             <section class="p-bottom">
-                <section class="p-des">${p.des}</section>
+            <!-- <section class="p-des">${p.des}</section> -->
                 <section class="p-button">
                     <a href="${p.live}" target="_blank"><button class="p-live">_Live Demo</button></a>
                     <a href="${p.git}" target="_blank"><button class="p-git"> _GitHub</button></a>
