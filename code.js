@@ -2,8 +2,9 @@
 const dynamicText = document.querySelector(".des-info span");
 const words = [
   "_front-end developer",
-  "_full stack developer",
+  "_react developer",
   "_software engineer",
+  "_full stack developer",
 ];
 let wordIdx = 0;
 let charIdx = 0;
@@ -51,89 +52,42 @@ window.addEventListener("resize", updateLeftFixedDivs);
 // projects
 var projectInfo = [
   {
+    git: "https://github.com/Abir-Hasan-Al-amin/ChatApp-Reactjs",
+    live: "https://chatapp-abir.netlify.app/",
+    title: "ChatApp with FireBase -React.js",
+    img: "img/chat.png",
+  },
+  {
+    git: "https://github.com/Abir-Hasan-Al-amin/Weather-App",
+    live: "https://weatherapp-abir.netlify.app/",
+    title: "WeatherApp - React.js",
+    img: "img/2.png",
+  },
+  {
     git: "https://github.com/Abir-Hasan-Al-amin/ToDo_App_FireBase",
     live: "https://abirtodoapp.netlify.app/",
     title: "TodoApp with FireBase",
-    des: "This Todo App is a cutting-edge task management solution that leverages Firebase's robust real-time database and authentication services. This integration ensures seamless real-time collaboration, secure user authentication, and optimal user experiences across diverse devices with its responsive design.",
     img: "img/todo.png",
   },
   {
     git: "https://github.com/Abir-Hasan-Al-amin/Password-Generator-And-Manager",
     live: "https://passwordmanagerandgenerator.netlify.app/",
     title: "Password Generator And Manager using Local Storage",
-    des: "This project offers a user-friendly password management solution with a robust password generation algorithm, empowering users to create strong and secure passwords effortlessly. Additionally, it features a password manager and local storage capabilities to ensure the safe storage and accessibility of user credentials.",
     img: "img/pass.png",
-  },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/Usabilityhub.com---Clone",
-    live: "https://abir-hasan-al-amin.github.io/Usabilityhub.com---Clone/",
-    title: "Usabilityhub.com",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/us-clone.png",
   },
   {
     git: "https://github.com/Abir-Hasan-Al-amin/Youtube-Landing_Page-Clone",
     live: "https://abir-hasan-al-amin.github.io/Youtube-Landing_Page-Clone/",
     title: "Youtube Landing Page",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
     img: "img/you-clone.png",
-  },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/JavaScript-Form-Validation",
-    live: "https://abir-hasan-al-amin.github.io/JavaScript-Form-Validation/",
-    title: "Form Validation",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/Form.png",
   },
   {
     git: "https://github.com/Abir-Hasan-Al-amin/Mini-Project---Bangladesh-Gallery-using-CSS-Grid--",
     live: "https://abir-hasan-al-amin.github.io/Mini-Project---Bangladesh-Gallery-using-CSS-Grid--/",
     title: "Bangladesh-Gallery",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
     img: "img/bd.png",
   },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/Tic-tac-toe",
-    live: "https://abir-hasan-al-amin.github.io/Tic-tac-toe/",
-    title: "Tic-tac-toe",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/tic.png",
-  },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/News-Website",
-    live: "#",
-    title: "News Website",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/0.png",
-  },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/Basic-Calculator--Html---Css---JS-",
-    live: "https://abir-hasan-al-amin.github.io/Basic-Calculator--Html---Css---JS-/",
-    title: "Calculator",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/calculator.png",
-  },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/Insta-story-feature",
-    live: "https://abir-hasan-al-amin.github.io/Insta-story-feature/",
-    title: "Insta story feature",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/insta-story.png",
-  },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/Counter-App",
-    live: "https://abir-hasan-al-amin.github.io/Counter-App/",
-    title: "Counter",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/counter.png",
-  },
-  {
-    git: "https://github.com/Abir-Hasan-Al-amin/Facebook-Friend-Request-Card",
-    live: "https://abir-hasan-al-amin.github.io/Facebook-Friend-Request-Card/",
-    title: "Friend Request Card",
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-    img: "img/facbook-card.png",
-  },
+
 ];
 let pro = "";
 const projectContainer = document.querySelector(".projects-info");
@@ -226,18 +180,37 @@ navC.forEach((nav) => {
 });
 
 // smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+const homeSection = document.querySelector(".home");
+const aboutSection = document.querySelector(".about");
+const projectSection = document.querySelector(".projects");
+const skillSection = document.querySelector(".skills");
+const resumeSection = document.querySelector(".resume");
+const contactSection = document.querySelector(".contact");
 
-    const targetId = this.getAttribute("href").substring(1);
-    const targetElement = document.getElementById(targetId);
+document.querySelector(".homeSection").addEventListener('click',()=>{
+  homeSection.scrollIntoView({behavior : "smooth"});
+});
 
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: "smooth",
-      });
-    }
-  });
+document.querySelector(".aboutSection").addEventListener('click',()=>{
+  aboutSection.scrollIntoView({behavior : "smooth"});
+});
+
+document.querySelector(".projectSection").addEventListener('click',()=>{
+  projectSection.scrollIntoView({behavior : "smooth"});
+});
+
+document.querySelector(".skillSection").addEventListener('click',()=>{
+  skillSection.scrollIntoView({behavior : "smooth"});
+});
+
+document.querySelector(".resumeSection").addEventListener('click',()=>{
+  resumeSection.scrollIntoView({behavior : "smooth"});
+});
+
+document.querySelector(".contactSection").addEventListener('click',()=>{
+  contactSection.scrollIntoView({behavior : "smooth"});
+});
+
+document.querySelector(".aB").addEventListener('click',()=>{
+  aboutSection.scrollIntoView({behavior : "smooth"});
 });
