@@ -1,9 +1,9 @@
 // type animation
 const dynamicText = document.querySelector(".des-info span");
 const words = [
+  "_software engineer",
   "_front-end developer",
   "_react developer",
-  "_software engineer",
   "_full stack developer",
 ];
 let wordIdx = 0;
