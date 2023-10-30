@@ -87,7 +87,6 @@ var projectInfo = [
     title: "Bangladesh-Gallery",
     img: "img/bd.png",
   },
-
 ];
 let pro = "";
 const projectContainer = document.querySelector(".projects-info");
@@ -186,30 +185,48 @@ const projectSection = document.querySelector(".projects");
 const skillSection = document.querySelector(".skills");
 const resumeSection = document.querySelector(".resume");
 const contactSection = document.querySelector(".contact");
-document.querySelector(".homeSection").addEventListener('click',()=>{
-  homeSection.scrollIntoView({block:"start",behavior : "smooth"});
+document.querySelector(".homeSection").addEventListener("click", () => {
+  homeSection.scrollIntoView({ block: "start", behavior: "smooth" });
 });
 
-document.querySelector(".aboutSection").addEventListener('click',()=>{
-  aboutSection.scrollIntoView({block:"start",behavior : "smooth"});
+document.querySelector(".aboutSection").addEventListener("click", () => {
+  aboutSection.scrollIntoView({ block: "start", behavior: "smooth" });
 });
 
-document.querySelector(".projectSection").addEventListener('click',()=>{
-  projectSection.scrollIntoView({block:"start",behavior : "smooth"});
+document.querySelector(".projectSection").addEventListener("click", () => {
+  projectSection.scrollIntoView({ block: "start", behavior: "smooth" });
 });
 
-document.querySelector(".skillSection").addEventListener('click',()=>{
-  skillSection.scrollIntoView({block:"start",behavior : "smooth"});
+document.querySelector(".skillSection").addEventListener("click", () => {
+  skillSection.scrollIntoView({ block: "start", behavior: "smooth" });
 });
 
-document.querySelector(".resumeSection").addEventListener('click',()=>{
-  resumeSection.scrollIntoView({block:"start",behavior : "smooth"});
+document.querySelector(".resumeSection").addEventListener("click", () => {
+  resumeSection.scrollIntoView({ block: "start", behavior: "smooth" });
 });
 
-document.querySelector(".contactSection").addEventListener('click',()=>{
-  contactSection.scrollIntoView({block:"start",behavior : "smooth"});
+document.querySelector(".contactSection").addEventListener("click", () => {
+  contactSection.scrollIntoView({ block: "start", behavior: "smooth" });
 });
 
-document.querySelector(".aB").addEventListener('click',()=>{
-  aboutSection.scrollIntoView({block:"start",behavior : "smooth"});
+document.querySelector(".aB").addEventListener("click", () => {
+  aboutSection.scrollIntoView({ block: "start", behavior: "smooth" });
+});
+
+// active page
+const aNavs = document.querySelectorAll(".aNav");
+const sections = document.querySelectorAll("#section");
+let cSection = null;
+window.addEventListener('scroll', () => {
+  sections.forEach((sec) => {
+    if (window.scrollY >= sec.offsetTop - 200) {
+      cSection = sec.className;
+    }
+  });
+  aNavs.forEach((aNav) => {
+    if (aNav.href.includes(cSection)) {
+      document.querySelector(".activa").classList.remove('activa');
+      aNav.classList.add("activa");
+    }
+  });
 });

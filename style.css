@@ -11,7 +11,6 @@ html {
 }
 body {
   width: 100vw;
-  height: 100vh;
   background-color: #262a33;
   font-family: "VT323", monospace;
   font-size: 1.5rem;
@@ -80,6 +79,9 @@ main {
   height: 100%;
 }
 /* navigation  */
+.aNav.activa{
+  color : #00e8aa;
+}
 nav {
   width: 99vw;
   display: flex;
