@@ -186,31 +186,30 @@ const projectSection = document.querySelector(".projects");
 const skillSection = document.querySelector(".skills");
 const resumeSection = document.querySelector(".resume");
 const contactSection = document.querySelector(".contact");
-
 document.querySelector(".homeSection").addEventListener('click',()=>{
-  homeSection.scrollIntoView({behavior : "smooth"});
+  homeSection.scrollIntoView({block:"start",behavior : "smooth"});
 });
 
 document.querySelector(".aboutSection").addEventListener('click',()=>{
-  aboutSection.scrollIntoView({behavior : "smooth"});
+  aboutSection.scrollIntoView({block:"start",behavior : "smooth"});
 });
 
 document.querySelector(".projectSection").addEventListener('click',()=>{
-  projectSection.scrollIntoView({behavior : "smooth"});
+  projectSection.scrollIntoView({block:"start",behavior : "smooth"});
 });
 
 document.querySelector(".skillSection").addEventListener('click',()=>{
-  skillSection.scrollIntoView({behavior : "smooth"});
+  skillSection.scrollIntoView({block:"start",behavior : "smooth"});
 });
 
 document.querySelector(".resumeSection").addEventListener('click',()=>{
-  resumeSection.scrollIntoView({behavior : "smooth"});
+  resumeSection.scrollIntoView({block:"start",behavior : "smooth"});
 });
 
 document.querySelector(".contactSection").addEventListener('click',()=>{
-  contactSection.scrollIntoView({behavior : "smooth"});
+  contactSection.scrollIntoView({block:"start",behavior : "smooth"});
 });
 
 document.querySelector(".aB").addEventListener('click',()=>{
-  aboutSection.scrollIntoView({behavior : "smooth"});
+  aboutSection.scrollIntoView({block:"start",behavior : "smooth"});
 });

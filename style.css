@@ -181,6 +181,7 @@ nav a:hover {
 }
 .about {
   margin: var(--contentMargin);
+  scroll-margin-top: 120px;
 }
 /* about */
 .about-info {
@@ -200,6 +201,9 @@ nav a:hover {
   border-right: var(--border);
 }
 /* projects */
+.projects{
+  scroll-margin-top: 120px;
+}
 .projects-info {
   display: flex;
   flex-wrap: wrap;
@@ -296,6 +300,7 @@ nav a:hover {
 /* skills */
 .skills {
   margin: var(--contentMargin);
+  scroll-margin-top: 120px;
 }
 .skills ul {
   display: flex;
@@ -309,6 +314,7 @@ nav a:hover {
 /* resume */
 .resume {
   margin: var(--contentMargin);
+  scroll-margin-top: 120px;
 }
 .r-info {
   display: flex;
@@ -321,6 +327,7 @@ nav a:hover {
 /* contact me */
 .contact {
   margin: var(--contentMargin);
+  scroll-margin-top: 120px;
 }
 .c-info form {
   width: 100%;
